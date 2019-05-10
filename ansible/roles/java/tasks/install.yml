@@ -1,7 +1,34 @@
 ---
-- name: Install java jre 7 for usage with elasticsearch
+- name: Install java packages
   become: yes
   apt:
-    name: "{{ java.packages }}"
+    name: "{{ item }}"
     state: present
-  when: java.packages
+  loop: "{{ java.packages }}"
+
+- name: Download libjpeg required for java 7
+  get_url:
+    dest: "{{ java.repo_libjpg.deb_destination }}"
+    url: "{{ java.repo_libjpg.deb_source }}"
+    checksum: "{{ java.repo_libjpg.deb_checksum }}"
+
+- name: Install libjpeg
+  become: yes
+  shell: "dpkg -i {{ java.repo_libjpg.deb_destination }}"
+
+- name: Download java 7
+  get_url:
+    dest: "{{ java.repo_java7.deb_destination }}"
+    url: "{{ java.repo_java7.deb_source }}"
+    checksum: "{{ java.repo_java7.deb_checksum }}"
+
+- name: Install java 7
+  become: yes
+  shell: "dpkg -i {{ java.repo_java7.deb_destination }}"
+
+- name: Set java alternative
+  become: yes
+  alternatives:
+    name: "java"
+    path: "{{ java.alternative }}"
+  when: java.alternative is defined

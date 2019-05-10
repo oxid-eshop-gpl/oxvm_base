@@ -140,7 +140,7 @@ Change PHP version
 
 By default, PHP 7.1 version is installed.
 
-If some other PHP version is needed, it can be specified in ``personal.yml`` before building the machine.
+If some other PHP version is needed, it can be specified in ``personal.yml`` **before** building the machine (changing the php version via vagrant provision is not supported).
 
 .. code:: yaml
 
@@ -167,22 +167,13 @@ Change MySQL version
 
 By default, MySQL 5.7 version is installed.
 
-If you should need MySQL 5.5 it can be defined in the ``personal.yml`` before building the machine.
-
-.. code:: yaml
-
-  ---
-  mysql:
-    version: '5.5'
-
-
 Alternatively you could use tools like mysql-apt-config to switch to a different MySQL version,
 see example below which you can use after doing ``vagrant ssh``:
 
 .. code:: bash
 
-  wget http://dev.mysql.com/get/mysql-apt-config_0.8.7-1_all.deb
-  sudo dpkg -i mysql-apt-config_0.8.7-1_all.deb
+  wget http://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+  sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
   # Choose MySQL version to install
   sudo apt-get update
   sudo apt-get install mysql-server

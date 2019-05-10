@@ -15,13 +15,13 @@
   when: not docker
   tags: [internal_always]
 
-- name: Disable ndots
-  become: yes
-  lineinfile:
-    dest=/etc/resolvconf/resolv.conf.d/head
-    regexp="^domain"
-    line="domain ."
-  notify: Update resolver
+#- name: Disable ndots
+#  become: yes
+#  lineinfile:
+#    dest=/etc/resolvconf/resolv.conf.d/head
+#    regexp="^domain"
+#    line="domain ."
+#  notify: Update resolver
 
 - name: Configure Apt source mirror
   become: yes
@@ -40,7 +40,7 @@
     packages:
     - curl
     - wget
-    - python-software-properties
+    - software-properties-common
     - ca-certificates
 
 - name: Install Extra Packages

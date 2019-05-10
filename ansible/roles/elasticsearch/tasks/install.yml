@@ -46,7 +46,7 @@
 
 - name: Install elasticsearch
   become: yes
-  shell: "dpkg -i /tmp/elasticsearch_2_3_3.deb"
+  shell: "dpkg -i {{ elasticsearch.repo.deb_destination }}"
   tags:
     - elasticsearch
 

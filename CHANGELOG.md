@@ -4,17 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
-
-### Added
+## [3.0.0] - 2019-05-10
 
 ### Changed
-
-### Deprecated
+- Default base box changed to bento/ubuntu-18.04
 
 ### Removed
+- Parallels base_box entry as it can use the default base box now
+- MySQL 5.5 support
+- Deleted php handler role, which was not being used
 
 ### Fixed
+- Changed MySQL keyserver to a more robust format
+- Exchanged static repo destination for elasticsearch installation to config parameter
+- Java installation adapted for Ubuntu Bionic 18.04 
 
 ## [2.2.0] - 2019-04-26
 
@@ -99,7 +102,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
-[Unreleased]: https://github.com/OXID-eSales/oxvm_base/compare/v2.2.0...master
+[3.0.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.2...v2.2.0
 [2.1.2]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.0...v2.1.1

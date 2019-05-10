@@ -3,7 +3,7 @@ vagrant_local:
   vm:
     name: default
     provider: virtualbox
-    base_box: ubuntu/trusty64
+    base_box: bento/ubuntu-18.04
     hostname: default.local
     aliases:
       - www.default.local
@@ -19,10 +19,8 @@ vagrant_local:
       permissions: u=rwX:g=rwX:o=rD
       bindfs: true
     provider_specific:
-      parallels:
-        base_box: parallels/ubuntu-14.04
       lxc:
-        base_box: oxid_esales/trusty64-lxc
+        base_box: oxid_esales/bionic64-lxc
         ip: ~
         app_shared_folder:
           sync_type: ~
@@ -34,6 +32,7 @@ server:
   unattended_upgrade: false
   packages:
     - git
+    - bash-completion
   personal_packages: ~
   forceless_umount_url: https://github.com/OXID-eSales/oxvm_assets/blob/master/umount?raw=true
 landing:
@@ -113,7 +112,19 @@ varnish:
     target: /etc/varnish/default.vcl
 java:
   install: false
-  packages: [openjdk-7-jre-headless]
+  packages:
+    - libpulse0
+    - libsctp1
+    - openjdk-11-jre-headless
+  repo_libjpg:
+    deb_destination: '/tmp/libjpeg62-turbo_1.5.2-2+b1_amd64.deb'
+    deb_source: 'http://ftp.de.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.2-2+b1_amd64.deb'
+    deb_checksum: 'sha256:19fa4d492c59e051f00334b1a13bcd3579b3c199623a23e68476cb46d5b1d590'
+  repo_java7:
+    deb_destination: '/tmp/openjdk-7-jre-headless_7u161-2.6.12-1_amd64.deb'
+    deb_source: 'http://ftp.de.debian.org/debian/pool/main/o/openjdk-7/openjdk-7-jre-headless_7u161-2.6.12-1_amd64.deb'
+    deb_checksum: 'sha256:79f4582ffaedafd0f45195df9be5ff50ce8ccedf9163ed212d1e1ad031247695'
+  alternative: '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java'
 elasticsearch:
   install: false
   repo:

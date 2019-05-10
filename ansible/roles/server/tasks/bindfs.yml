@@ -25,7 +25,7 @@
   ignore_errors: yes
   failed_when: false
   changed_when: false
-  shell: "df -h | grep bindfs"
+  shell: "df -h | grep '{{ vagrant_local.vm.app_shared_folder.target }}'"
   register: bindfs_check
 
 - name: Run bindfs
