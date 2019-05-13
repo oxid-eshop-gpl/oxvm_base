@@ -56,9 +56,14 @@
   tags:
     - elasticsearch
 
+- name: Is decompound plugin already installed?
+  command: /usr/share/elasticsearch/bin/./plugin list | grep decompound
+  register: is_decompound_plugin_installed
+
 - name: Download decompound plugin for elastic search
   become: yes
   shell: "/usr/share/elasticsearch/bin/./plugin install http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-analysis-decompound/2.3.3.0/elasticsearch-analysis-decompound-2.3.3.0-plugin.zip"
+  when: is_decompound_plugin_installed == ""
   tags:
     - elasticsearch
 
