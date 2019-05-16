@@ -5,6 +5,9 @@
     - java
     
 - include: install.yml
+  when: selenium.install
+
+- include: install.yml
   when: elasticsearch.install
   tags:
     - elasticsearch

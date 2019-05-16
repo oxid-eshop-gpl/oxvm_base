@@ -30,7 +30,6 @@
       - xfce4
       - xvfb
       - x11vnc
-      - openjdk-7-jre-headless
       - rng-tools
 
   - name: Remove systemd-services
