@@ -57,7 +57,7 @@
     - elasticsearch
 
 - name: Is decompound plugin already installed?
-  command: /usr/share/elasticsearch/bin/./plugin list | grep decompound
+  command: /usr/share/elasticsearch/bin/./plugin list | grep -e "- decompound$"
   register: is_decompound_plugin_installed
 
 - name: Download decompound plugin for elastic search
