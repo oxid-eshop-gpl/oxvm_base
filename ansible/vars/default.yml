@@ -106,7 +106,7 @@ varnish:
     key: 'https://packagecloud.io/varnishcache/varnish40/gpgkey'
     https: '1'
   daemon_path: /usr/sbin/varnishd
-  package_name: varnish
+  package_name: varnish=4.0.*
   default_config:
     source: ~
     target: /etc/varnish/default.vcl

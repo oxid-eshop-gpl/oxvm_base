@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Use Java installation role instead of apt package in Selenium installation
+- Define version 4.0 for Varnish package installation
 
 ## [3.0.0] - 2019-05-10
 
