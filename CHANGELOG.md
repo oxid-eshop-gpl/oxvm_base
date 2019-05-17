@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.0.1] - Unreleased
 
+### Added
+- Check if elasticsearch decompound plugin is already installed [PR-28](https://github.com/OXID-eSales/oxvm_base/pull/28)
+
 ### Fixed
 - Use Java installation role instead of apt package in Selenium installation
 - Define version 4.0 for Varnish package installation
