@@ -164,3 +164,10 @@ end
 if ENV["CONFIG"] == "1"
   puts yaml_config.to_yaml
 end
+
+Vagrant.configure("2") do |config|
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    # Check for and install VB Guest Additions only on the very first provision
+    config.vbguest.auto_update = !Dir['.vagrant/machines/default/*/action_provision'].any?
+  end
+end
