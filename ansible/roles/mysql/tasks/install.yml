@@ -105,6 +105,18 @@
     group: vagrant
     mode: 0600
 
+- name: Create oxid.cnf
+  become: yes
+  template:
+    src: "{{role_path}}/files/oxid.cnf.j2"
+    dest: "/etc/mysql/conf.d/oxid.cnf"
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+  when: mysql.sql_mode
+  notify: restart mysql
+
 - name: Create databases
   mysql_db: name={{ mysql.database }} state=present login_user=root login_password={{ mysql.root_password }}
 

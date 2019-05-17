@@ -178,6 +178,18 @@ see example below which you can use after doing ``vagrant ssh``:
   sudo apt-get update
   sudo apt-get install mysql-server
 
+Adapt MySQL "sql_mode"
+^^^^^^^^^^^^^^^^^^^^^^
+
+By default the sql mode is set to "ONLY_FULL_GROUP_BY,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION",
+but can be adapted as needed via:
+
+.. code:: yaml
+
+  ---
+  mysql:
+    sql_mode: 'your custom mode string'
+
 Change VM provider
 ^^^^^^^^^^^^^^^^^^
 

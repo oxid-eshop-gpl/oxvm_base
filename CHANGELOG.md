@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Check if elasticsearch decompound plugin is already installed [PR-28](https://github.com/OXID-eSales/oxvm_base/pull/28)
+- MySQL restart handler
+- MySQL setting for the sql_mode
 
 ### Fixed
 - Use Java installation role instead of apt package in Selenium installation
