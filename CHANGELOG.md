@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.0.1] - Unreleased
+## [3.0.1] - 2019-05-21
 
 ### Added
 - Check if elasticsearch decompound plugin is already installed [PR-28](https://github.com/OXID-eSales/oxvm_base/pull/28)
@@ -114,7 +114,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
-[3.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.0...master
+[3.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.2...v2.2.0
 [2.1.2]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.1...v2.1.2
