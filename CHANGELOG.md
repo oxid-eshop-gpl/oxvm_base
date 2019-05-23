@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Restrict the "Check swap" and "Enable swap" role to Virtualbox
+- Enhanced auto-upgrade templates
 
 ## [3.0.1] - 2019-05-21
 
