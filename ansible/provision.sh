@@ -32,8 +32,9 @@ if [ ! -f /root/ansible_ready ]; then
   cat /vagrant/ansible/files/authorized_keys >> /home/vagrant/.ssh/authorized_keys
 
   # Provide localhost for ansible
-  echo 'localhost' > /etc/ansible/hosts
-  chmod 666 /etc/ansible/hosts
+  sudo mkdir -p /etc/ansible
+  sudo echo 'localhost' > /etc/ansible/hosts
+  sudo chmod 666 /etc/ansible/hosts
 fi
 
 if [ -z "$2" ]; then
