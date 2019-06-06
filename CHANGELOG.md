@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.0.2] - Unreleased
 
+### Added
+- Performance improvements for Virtualbox [PR-26](https://github.com/OXID-eSales/oxvm_base/pull/26) 
+
 ### Changed
 - Restrict the "Check swap" and "Enable swap" role to Virtualbox
 - Enhanced auto-upgrade templates
