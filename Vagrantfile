@@ -100,7 +100,11 @@ Vagrant.configure("2") do |config|
       "modifyvm", :id,
       "--name", vm_config["name"],
       "--memory", vm_config["memory"],
-      "--natdnshostresolver1", "on",
+      "--natdnshostresolver1", vm_config["natdnshostresolver1"],
+      "--natdnsproxy1", vm_config["natdnsproxy1"],
+      "--nestedpaging", vm_config["nestedpaging"],
+      "--hwvirtex", vm_config["hwvirtex"],
+      "--ioapic", vm_config["ioapic"],
       "--cpus", vm_config["cpus"],
     ]
 

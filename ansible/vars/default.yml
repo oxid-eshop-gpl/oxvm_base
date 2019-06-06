@@ -8,12 +8,17 @@ vagrant_local:
     aliases:
       - www.default.local
     ip: 192.168.123.2
-    memory: '512'
+    memory: '1024'
     cpus: 1
+    ioapic: "on"
+    hwvirtex: "on"
+    nestedpaging: "on"
+    natdnshostresolver1: "on"
+    natdnsproxy1: "on"
     app_shared_folder:
       source: www
       target: /var/www
-      sync_type: ~
+      sync_type: nfs
       owner: vagrant
       group: vagrant
       permissions: u=rwX:g=rwX:o=rD
