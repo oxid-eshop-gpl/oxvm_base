@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Provide localhost file for ansible as root
 - Ensure that en_US.UTF-8 is the default locale
+- Use outgoing IP instead of hostname for xdebug
 
 ## [3.0.1] - 2019-05-21
 
