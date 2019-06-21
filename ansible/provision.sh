@@ -2,10 +2,11 @@
 
 if [ ! -f /root/ansible_ready ]; then
   # Update Repositories
-  sudo apt-get update
+  sleep 5m
+  sudo apt-get update -y
 
   # Install bc
-  sudo apt-get install bc
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install bc --no-install-recommends
 
   # Determine Ubuntu Version
   . /etc/lsb-release
@@ -18,15 +19,15 @@ if [ ! -f /root/ansible_ready ]; then
 
   if [[ "$USE_COMMON" -eq "1" ]];
   then
-    sudo apt-get install -y software-properties-common
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends software-properties-common
   else
-    sudo apt-get install -y python-software-properties
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python-software-properties
   fi
 
   # Add Ansible Repository & Install Ansible
   sudo add-apt-repository -y ppa:ansible/ansible
-  sudo apt-get update
-  sudo apt-get install -y ansible && sudo touch /root/ansible_ready
+  sudo apt-get update -y
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ansible && sudo touch /root/ansible_ready
 
   # Copy vagrant's public key to allow ssh key authentication
   cat /vagrant/ansible/files/authorized_keys >> /home/vagrant/.ssh/authorized_keys
