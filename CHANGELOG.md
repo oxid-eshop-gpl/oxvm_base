@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Restrict the "Check swap" and "Enable swap" role to Virtualbox
 - Enhanced auto-upgrade templates
+- Restart services during package upgrades without asking
 
 ### Fixed
 - Provide localhost file for ansible as root
