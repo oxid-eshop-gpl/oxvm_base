@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Restrict the "Check swap" and "Enable swap" role to Virtualbox
 - Enhanced auto-upgrade templates
 - Restart services during package upgrades without asking
+- Use oxvm_assets for elasticsearch, libjpeg and openjdk-7
 
 ### Fixed
 - Provide localhost file for ansible as root

@@ -124,18 +124,18 @@ java:
     - openjdk-11-jre-headless
   repo_libjpg:
     deb_destination: '/tmp/libjpeg62-turbo_1.5.2-2+b1_amd64.deb'
-    deb_source: 'http://ftp.de.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.2-2+b1_amd64.deb'
+    deb_source: 'https://github.com/OXID-eSales/oxvm_assets/raw/master/libjpeg62-turbo_1.5.2-2+b1_amd64.deb'
     deb_checksum: 'sha256:19fa4d492c59e051f00334b1a13bcd3579b3c199623a23e68476cb46d5b1d590'
   repo_java7:
     deb_destination: '/tmp/openjdk-7-jre-headless_7u161-2.6.12-1_amd64.deb'
-    deb_source: 'http://ftp.de.debian.org/debian/pool/main/o/openjdk-7/openjdk-7-jre-headless_7u161-2.6.12-1_amd64.deb'
+    deb_source: 'https://github.com/OXID-eSales/oxvm_assets/raw/master/openjdk-7-jre-headless_7u161-2.6.12-1_amd64.deb'
     deb_checksum: 'sha256:79f4582ffaedafd0f45195df9be5ff50ce8ccedf9163ed212d1e1ad031247695'
   alternative: '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java'
 elasticsearch:
   install: false
   repo:
     deb_destination: '/tmp/elasticsearch_2_3_3.deb'
-    deb_source: 'https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.3/elasticsearch-2.3.3.deb'
+    deb_source: 'https://github.com/OXID-eSales/oxvm_assets/raw/master/elasticsearch-2.3.3.deb'
     deb_checksum: 'sha1:8385dda7aa3870a3b13fc1df91d8b750d940700e'
 selenium:
   install: false
