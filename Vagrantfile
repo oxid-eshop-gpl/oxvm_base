@@ -163,9 +163,7 @@ Vagrant.configure("2") do |config|
       args: [playbook_name, "internal_always"],
       run: "always"
   end
-  config.vm.provision "shell", run: "always" do |s|
-  s.path = "#{base_vm_path}/ansible/apache_restart.sh"
-  end
+  config.vm.provision :shell, :inline => "sudo service apache2 restart", run: "always"
 end
 
 if ENV["CONFIG"] == "1"
