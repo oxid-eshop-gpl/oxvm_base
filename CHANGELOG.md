@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.0.2] - Unreleased
+## [3.0.2] - 2019-07-05
 
 ### Added
 - Performance improvements for Virtualbox [PR-26](https://github.com/OXID-eSales/oxvm_base/pull/26)
@@ -131,7 +131,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
-[3.0.2]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.1...master
+[3.0.2]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/OXID-eSales/oxvm_base/compare/v2.1.2...v2.2.0
