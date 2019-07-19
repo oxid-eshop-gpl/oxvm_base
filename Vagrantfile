@@ -3,6 +3,12 @@ pwd = File.dirname(File.expand_path(__FILE__))
 base_vm_path = ENV.has_key?('BASE_VM_PATH') ? ENV['BASE_VM_PATH'] : pwd
 vm_path = ENV.has_key?('VM_PATH') ? ENV['VM_PATH'] : pwd
 
+Vagrant.configure("2") do |config|
+  config.vm.provision :shell,
+    keep_color: true,
+    path: "#{base_vm_path}/ansible/disable_updates.sh"
+end
+
 require "#{base_vm_path}/ansible/ruby/deep_merge.rb"
 require "#{base_vm_path}/ansible/ruby/get_vm_variables_from_ansible.rb"
 require "#{base_vm_path}/ansible/ruby/which.rb"

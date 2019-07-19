@@ -2,7 +2,6 @@
 
 if [ ! -f /root/ansible_ready ]; then
   # Update Repositories
-  sleep 5m
   sudo apt-get update -y
 
   # Install bc
