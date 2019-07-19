@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Completely disable unattended upgrades on first start
 
+### Removed
+- Unused tasks from the mysql installation role
+
 ## [3.0.2] - 2019-07-05
 
 ### Added

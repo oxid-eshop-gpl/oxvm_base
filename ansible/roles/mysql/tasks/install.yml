@@ -3,54 +3,6 @@
 - shell: hostname
   register: current_hostname
 
-#- name: Ensure mysql upstream repository package is downloaded
-#  get_url:
-#    dest: /tmp/mysql-apt-config.deb
-#    url: "https://repo.mysql.com/mysql-apt-config_0.8.7-1_all.deb"
-#    checksum: "sha256:9a15eb95ec359aac3eebf5b85b2719d45e7975d0de337100d771f7c0d5c95ede"
-#    timeout: 60
-#  register: result
-#  until: result is success
-#  retries: 5
-#  delay: 1
-#  when: '"5.7" in mysql.version'
-
-#- name: Ensure mysql upstream repository package is configured
-#  become: yes
-#  debconf:
-#    name: mysql-apt-config
-#    question: "mysql-apt-config/{{ item.question }}"
-#    value: "{{ item.value }}"
-#    vtype: "{{ item.vtype | default ('select') }}"
-#  with_items:
-#    - question: repo-distro
-#      value: "ubuntu"
-#    - question: repo-codename
-#      value: "bionic"
-#    - question: select-server
-#      value: "mysql-5.7"
-#  when: '"5.7" in mysql.version'
-
-#- name: Ensure mysql upstream repository is installed
-#  become: yes
-#  apt:
-#    deb: /tmp/mysql-apt-config.deb
-#  when: '"5.7" in mysql.version'
-
-#- name: Ensure the key for the mysql repositories is up to date
-#  become: yes
-#  apt_key:
-#    keyserver: hkp://keyserver.ubuntu.com:80
-#    id: 5072E1F5
-#    state: present
-#  when: '"5.7" in mysql.version'
-
-#- name: Update apt cache
-#  become: yes
-#  apt:
-#    update_cache: yes
-#  when: '"5.7" in mysql.version'
-
 - name: Install MySQL Packages
   become: yes
   apt:
@@ -78,23 +30,6 @@
     login_user: root
     login_password: "{{ mysql.root_password}}"
     login_unix_socket: /var/run/mysqld/mysqld.sock
-
-#- name: Set root user password for 5.5
-#  # If .my.cnf already exists, this will cause an mysql-root-password update.
-#  mysql_user:
-#    name: root
-#    host: "localhost"
-#    check_implicit_admin: yes
-#    login_user: root
-#    password: "{{ mysql.root_password}}"
-#  when: '"5.5" in mysql.version'
-
-#- name: Set root user password for 5.7
-#  become: yes
-#  command: >
-#    mysql -u root mysql
-#    --execute "UPDATE mysql.user SET authentication_string=PASSWORD('{{ mysql.root_password}}'),plugin='mysql_native_password' WHERE user='root' AND Host='localhost'; flush privileges;"
-#  when: '"5.7" in mysql.version and mysql_installation_result is changed'
 
 - name: Create .my.cnf
   become: yes
