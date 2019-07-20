@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- Added html directory in www to fix [ISSUE-29](https://github.com/OXID-eSales/oxvm_base/issues/29)
+
 ## [3.0.3] - 2019-07-20
 
 ### Fixed
@@ -139,6 +144,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
+[Unreleased]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.3...master
 [3.0.3]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.0...v3.0.1
