@@ -41,6 +41,10 @@
     dest: "{{ elasticsearch.repo.deb_destination }}"
     url: "{{ elasticsearch.repo.deb_source }}"
     checksum: "{{ elasticsearch.repo.deb_checksum }}"
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
   tags:
     - elasticsearch
 

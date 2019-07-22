@@ -11,6 +11,10 @@
     dest: "{{ java.repo_libjpg.deb_destination }}"
     url: "{{ java.repo_libjpg.deb_source }}"
     checksum: "{{ java.repo_libjpg.deb_checksum }}"
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Install libjpeg
   become: yes
@@ -21,6 +25,10 @@
     dest: "{{ java.repo_java7.deb_destination }}"
     url: "{{ java.repo_java7.deb_source }}"
     checksum: "{{ java.repo_java7.deb_checksum }}"
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
 - name: Install java 7
   become: yes

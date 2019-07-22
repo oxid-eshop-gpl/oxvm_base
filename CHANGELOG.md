@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- The java and elasticsearch get_url tasks now also will do 5 retries
+
 ### Fixed
 - Added html directory in www to fix [ISSUE-29](https://github.com/OXID-eSales/oxvm_base/issues/29)
 
