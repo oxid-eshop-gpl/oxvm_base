@@ -48,6 +48,8 @@ Quick start
 
 **Note for Windows users**: Use console with **Administrator privileges** to run vagrant commands!
 
+**Note for Ubuntu Xenial (16.04 LTS) users**: See `LXC on Ubuntu 16.04`_ in the `Troubleshooting`_ section.
+
 * Clone out current repository:
 
 .. code:: bash
@@ -667,3 +669,22 @@ Possible solution:
 
 - Install Vagrant in a directory which has no spaces in the path.
 - Define Windows Environment Variable ``%VAGRANT_HOME%`` to hold path to the directory ``Path_to_Vagrant\bin``
+
+LXC on Ubuntu 16.04
+-------------------
+
+As the VM is based on Ubuntu 18.04 the newest version of LXC is required, which is available via backports.
+
+.. code:: bash
+
+    wget http://archive.ubuntu.com/ubuntu/pool/main/l/lxc/lxc1_3.0.3-0ubuntu1~16.04.1_all.deb \
+    http://archive.ubuntu.com/ubuntu/pool/main/l/lxc/lxc-utils_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    http://archive.ubuntu.com/ubuntu/pool/main/l/lxc/liblxc1_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    http://archive.ubuntu.com/ubuntu/pool/main/l/lxc/liblxc-common_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    http://archive.ubuntu.com/ubuntu/pool/main/l/lxc-templates/lxc-templates_3.0.0-0ubuntu1~16.04.1_amd64.deb
+
+    sudo dpkg -i liblxc1_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    liblxc-common_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    lxc-utils_3.0.3-0ubuntu1~16.04.1_amd64.deb \
+    lxc-templates_3.0.0-0ubuntu1~16.04.1_amd64.deb \
+    lxc1_3.0.3-0ubuntu1~16.04.1_all.deb
