@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - The java and elasticsearch get_url tasks now also will do 5 retries
+- Add zip to packages and also to php extensions
 
 ### Fixed
-- Added html directory in www to fix [ISSUE-29](https://github.com/OXID-eSales/oxvm_base/issues/29)
+- Add html directory in www to fix [ISSUE-29](https://github.com/OXID-eSales/oxvm_base/issues/29)
 
 ## [3.0.3] - 2019-07-20
 

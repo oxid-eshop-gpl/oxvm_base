@@ -38,6 +38,7 @@ server:
   packages:
     - git
     - bash-completion
+    - zip
   personal_packages: ~
   forceless_umount_url: https://github.com/OXID-eSales/oxvm_assets/blob/master/umount?raw=true
 landing:
@@ -68,6 +69,7 @@ php:
     - curl
     - xml
     - sqlite3
+    - zip
   version: 7.1
   display_errors: On
   xdebug:
