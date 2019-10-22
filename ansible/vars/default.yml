@@ -70,6 +70,7 @@ php:
     - xml
     - sqlite3
     - zip
+    - mbstring
   version: 7.1
   display_errors: On
   xdebug:
