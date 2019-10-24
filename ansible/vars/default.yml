@@ -34,7 +34,6 @@ server:
   timezone: Europe/Berlin
   locale: en_US.UTF-8
   apt_mirror: http://de.archive.ubuntu.com/ubuntu/
-  unattended_upgrade: false
   packages:
     - git
     - bash-completion

@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Add html directory in www to fix [ISSUE-29](https://github.com/OXID-eSales/oxvm_base/issues/29)
 
+### Removed
+- Delete the server.unattended_upgrade option with related files and tasks
+
 ## [3.0.3] - 2019-07-20
 
 ### Fixed
