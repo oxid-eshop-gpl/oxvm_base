@@ -169,6 +169,17 @@ Change MySQL version
 
 By default, MySQL 5.7 version is installed.
 
+To install MySQL 8.0 set
+
+.. code:: yaml
+
+  ---
+  mysql:
+    version: '8.0'
+    sql_mode: 'ONLY_FULL_GROUP_BY,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'
+
+**Notes:** You cannot change the MySQL version using provision, you have to choose either before the first ``vagrant up`` or do a ``vagrant destroy`` and ``vagrant up``.
+
 Alternatively you could use tools like mysql-apt-config to switch to a different MySQL version,
 see example below which you can use after doing ``vagrant ssh``:
 

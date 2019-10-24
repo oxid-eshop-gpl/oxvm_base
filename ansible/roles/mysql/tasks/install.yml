@@ -3,11 +3,26 @@
 - shell: hostname
   register: current_hostname
 
+- name: Add MySQL 8 ubuntu bionic repository key
+  become: yes
+  apt_key:
+    keyserver: keys.gnupg.net
+    id: 5072E1F5
+  when: mysql.version == "8.0"
+
+- name: Add MySQL 8 ubuntu bionic repository
+  become: yes
+  apt_repository:
+    repo: "deb http://repo.mysql.com/apt/ubuntu bionic mysql-8.0"
+    state: present
+  when: mysql.version == "8.0"
+
 - name: Install MySQL Packages
   become: yes
   apt:
     name: "{{ packages }}"
     state: latest
+    update_cache: yes
   vars:
     packages:
     - mysql-server
