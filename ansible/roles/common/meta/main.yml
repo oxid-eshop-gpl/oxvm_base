@@ -4,6 +4,7 @@ dependencies:
   - landing
   - apache
   - mysql
+  - mariadb
   - php
   - mailhog
   - adminer

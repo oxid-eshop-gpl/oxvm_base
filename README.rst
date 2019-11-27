@@ -203,6 +203,27 @@ but can be adapted as needed via:
   mysql:
     sql_mode: 'your custom mode string'
 
+Use MariaDB as MySQL replacement
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is possible to use MariaDB instead of MySQL, to do so it is necessary to set the mysql installation to false.
+Notice:
+ - only version 10.4 is supported at this time
+ - change the root_password, database, user and password according to your needs
+
+.. code:: yaml
+
+  ---
+  mysql:
+    install: false
+  mariadb:
+    install: true
+    version: '10.4'
+    root_password: '1234'
+    database: db
+    user: user
+    password: password2
+
 Change VM provider
 ^^^^^^^^^^^^^^^^^^
 

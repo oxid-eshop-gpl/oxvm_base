@@ -1,0 +1,5 @@
+---
+- include: install.yml
+  when: mariadb.install
+  tags:
+    - mariadb

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ###Added
 - Support for MySQL 8.0
+- Support for MariaDB 10.4
 
 ### Changed
 - The java and elasticsearch get_url tasks now also will do 5 retries
