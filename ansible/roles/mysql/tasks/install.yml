@@ -71,7 +71,12 @@
     mode: 0644
     force: yes
   when: mysql.sql_mode
-  notify: restart mysql
+
+- name: Restart mysql
+  become: yes
+  service:
+    name: mysql
+    state: restarted
 
 - name: Create databases
   mysql_db: name={{ mysql.database }} state=present login_user=root login_password={{ mysql.root_password }}
