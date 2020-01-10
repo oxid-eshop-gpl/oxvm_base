@@ -7,3 +7,9 @@
   shell: "a2enmod php{{ php.version }}"
   notify:
     - restart apache
+
+- name: Switch default CLI version
+  become: yes
+  alternatives:
+    name: php
+    path: "/usr/bin/php{{ php.version }}"
