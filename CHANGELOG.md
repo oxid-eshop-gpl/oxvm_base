@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [3.1.0] - 1010-02-19
 
-###Added
+### Added
 - Support for MySQL 8.0
 - Support for MariaDB 10.4
 
@@ -156,7 +156,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
-[Unreleased]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.3...master
+[Unreleased]: https://github.com/OXID-eSales/oxvm_base/compare/v3.1.0...master
+[3.1.0]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.0...v3.0.1
