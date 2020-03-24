@@ -7,6 +7,10 @@
   become: yes
   apt: update_cache=yes
 
+- name: "Uninstall unwanted php versions and packages"
+  become: yes
+  shell: "dpkg --get-selections | awk '{ print $1 }' | grep -P '.*php[0-9]\\.[0-9].*' | grep -v '{{ php.version }}' | xargs -n1 apt-get purge -y"
+
 - name: "Install php {{ php.version }}"
   become: yes
   apt:
