@@ -219,10 +219,10 @@ Notice:
   mariadb:
     install: true
     version: '10.4'
-    root_password: '1234'
+    root_password: '123'
     database: db
     user: user
-    password: password2
+    password: password
 
 Change VM provider
 ^^^^^^^^^^^^^^^^^^
