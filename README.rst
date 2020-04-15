@@ -570,6 +570,12 @@ Troubleshooting
 
 List of troubleshooting items:
 
+Virtualbox on Windows fails with networking errors
+--------------------------------------------------
+
+If conflicting software is used (like Docker), then please uninstall and reinstall Virtualbox (notice that just a repair installation will not resolve the situation), before digging deeper.
+If using Virtualbox 6 and you receive an error like "VBoxManage.exe: error: Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND)" then installing Virtualbox via `cmd` with administrative rights using a.e. `VirtualBox-6.1.4-136177-Win.exe -msiparams NETWORKTYPE=NDIS5` might be necessary to install with a compatible network device for Vagrant.
+
 Provision process hangs on "Run composer install" task
 ------------------------------------------------------
 
