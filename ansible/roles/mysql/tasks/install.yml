@@ -88,7 +88,13 @@
     - "{{ current_hostname.stdout | lower }}"
 
 - name: Create users
-  mysql_user: name={{ mysql.user }} password={{ mysql.password }} priv={{ mysql.database }}.*:ALL state=present login_user=root login_password={{ mysql.root_password }}
+  mysql_user:
+    name: "{{ mysql.user }}"
+    password: "{{ mysql.password }}"
+    priv: "{{ mysql.grants }}"
+    login_user: root
+    login_password: "{{ mysql.root_password }}"
+    state: present
 
 - name: Transfer mysql to in memory storage
   include: in_memory.yml
