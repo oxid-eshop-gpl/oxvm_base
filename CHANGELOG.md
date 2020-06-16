@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Use strict modes for MySQL 5.7
 - Increase default memory from 512 to 1024 MB
+- Set MariaDB/MySQL grants via variables
 
 ### Fixed
 - Clean up php versions on version changes
