@@ -1,0 +1,5 @@
+---
+xhprof:
+  ver: 5.0.2
+xhgui:
+  dest: /var/www/xhgui

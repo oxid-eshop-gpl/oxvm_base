@@ -1,0 +1,98 @@
+---
+- name: Install MongoDB
+  apt:
+    name:
+    - mongodb
+    - php-mongodb
+    state: latest
+  become: yes
+
+- name: Install Tideways XHProf extension
+  apt:
+    deb: "https://github.com/tideways/php-xhprof-extension/releases/download/v{{ xhprof.ver }}/tideways-xhprof_{{ xhprof.ver }}_amd64.deb"
+  become: yes
+
+- name: Add XHProf ext to mods-available
+  lineinfile:
+    path: "/etc/php/{{ php.version }}/mods-available/tideways_xhprof.ini"
+    line: "extension=/usr/lib/tideways_xhprof/tideways_xhprof-{{ php.version }}.so"
+    create: true
+  become: yes
+
+- name: Add symlink
+  file:
+    src: "/etc/php/{{ php.version }}/mods-available/tideways_xhprof.ini"
+    dest: "/etc/php/{{ php.version }}/cli/conf.d/10-tideways_xhprof.ini"
+    state: link
+  become: yes
+
+- name: Add symlink
+  file:
+    src: "/etc/php/{{ php.version }}/mods-available/tideways_xhprof.ini"
+    dest: "/etc/php/{{ php.version }}/apache2/conf.d/10-tideways_xhprof.ini"
+    state: link
+  become: yes
+
+- name: Set XHGui directory permissions
+  file:
+    path: "{{ xhgui.dest }}"
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0775
+  become: yes
+
+- name: Create XHGui composer project
+  composer:
+    command: create-project
+    arguments: "perftools/xhgui {{ xhgui.dest }}"
+    working_dir: "{{ xhgui.dest }}"
+  become_user: vagrant
+
+- name: Run composer install
+  shell: "cd {{ xhgui.dest }} && composer install"
+  become_user: vagrant
+
+- name: Set cache permsissions
+  file:
+    path: "{{ xhgui.dest }}/cache"
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0777
+  become: yes
+
+- name: Override default XHGui config
+  template:
+    src: config.php.tpl
+    dest: "{{ xhgui.dest }}/config/config.php"
+  become_user: vagrant
+
+- name: Add XHGui conf to Apache
+  template:
+    src: xhgui.conf.tpl
+    dest: /etc/apache2/sites-available/xhgui.conf
+  become: yes
+
+- name: Add XHGui to hosts file
+  lineinfile:
+    dest: /etc/hosts
+    line: 'localhost xhgui.local'
+    state: present
+  become: yes
+
+- name: Prepend XHGui header to default site
+  lineinfile:
+    path: /etc/apache2/sites-available/000-default.conf
+    regexp: '<VirtualHost \*:80>'
+    line: "<VirtualHost *:80>\r    php_admin_value auto_prepend_file '{{ xhgui.dest }}/external/header.php'"
+    state: present
+  become: yes
+
+- name: Enable XHGui conf
+  command: a2ensite xhgui
+  args:
+    creates: /etc/apache2/sites-enabled/xhgui.conf
+  become: yes
+  notify:
+    - restart apache

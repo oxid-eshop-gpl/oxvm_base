@@ -1,0 +1,6 @@
+---
+- name: Install xHprof/XHGui
+  include: install.yml
+  when: php.xhprof.install
+  tags:
+    - xhprof
