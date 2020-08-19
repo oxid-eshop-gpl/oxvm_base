@@ -17,7 +17,7 @@ start)
   pid=$(ps x -o "%c" | \grep mailhog_start)
 
   if [[ -z $pid ]]; then
-    start-stop-daemon --start --quiet --background --exec $MAILHOG
+    start-stop-daemon --start --quiet --background --exec "$MAILHOG"
     echo "."
   else
     echo ". already started!"
@@ -30,8 +30,8 @@ stop)
   pid=$(ps x -o "%p %c" | \grep mailhog_start | awk '{ print $1; }')
 
   if [[ -n $pid ]]; then
-    pgid=$(ps x -o "%p %r" | \grep $pid | awk '{ print $2; }')
-    kill -TERM -- -$pgid
+    pgid=$(ps x -o "%p %r" | \grep "$pid" | awk '{ print $2; }')
+    kill -TERM -- -"$pgid"
     echo "."
   else
     echo ". Process not started yet!"
