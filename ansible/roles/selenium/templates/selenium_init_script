@@ -17,7 +17,7 @@ start)
 
   pid=$(ps x -o "%c" | \grep start_xvfb.sh)
 
-  if [[ ! -n $pid ]]; then
+  if [[ -z $pid ]]; then
     start-stop-daemon --start --quiet --background --exec $XVFB
     echo "."
   else
