@@ -37,7 +37,7 @@ if [ ! -f /root/ansible_ready ]; then
 fi
 
 if [ -z "$2" ]; then
-  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/$1.yml --connection=local
+  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/"$1".yml --connection=local
 else
-  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/$1.yml --tags "$2" --connection=local
+  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/"$1".yml --tags "$2" --connection=local
 fi
