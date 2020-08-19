@@ -16,7 +16,7 @@ start)
 
   pid=$(ps x -o "%c" | \grep mailhog_start)
 
-  if [[ ! -n $pid ]]; then
+  if [[ -z $pid ]]; then
     start-stop-daemon --start --quiet --background --exec $MAILHOG
     echo "."
   else
@@ -44,7 +44,7 @@ restart)
 status)
   pid=$(ps x -o "%c" | \grep mailhog_start)
 
-  if [[ ! -n $pid ]]; then
+  if [[ -z $pid ]]; then
     echo "Not started."
     exit 3
   else
