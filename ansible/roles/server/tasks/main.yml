@@ -38,10 +38,10 @@
     state: latest
   vars:
     packages:
-    - curl
-    - wget
-    - software-properties-common
-    - ca-certificates
+      - curl
+      - wget
+      - software-properties-common
+      - ca-certificates
 
 - name: Install Extra Packages
   become: yes

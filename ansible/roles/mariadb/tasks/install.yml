@@ -24,9 +24,9 @@
     update_cache: yes
   vars:
     packages:
-    - mariadb-server
-    - mariadb-client
-    - python-mysqldb
+      - mariadb-server
+      - mariadb-client
+      - python-mysqldb
 
 - name: Ensure MariaDB service running
   become: yes

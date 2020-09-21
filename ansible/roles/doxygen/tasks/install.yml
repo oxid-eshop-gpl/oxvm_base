@@ -6,10 +6,10 @@
     state: present
   vars:
     packages:
-    - doxygen
-    - flex
-    - bison
-    - make
-    - cmake
-    - graphviz
-    - build-essential
+      - doxygen
+      - flex
+      - bison
+      - make
+      - cmake
+      - graphviz
+      - build-essential

@@ -25,9 +25,9 @@
     update_cache: yes
   vars:
     packages:
-    - mysql-server
-    - mysql-client
-    - python-mysqldb
+      - mysql-server
+      - mysql-client
+      - python-mysqldb
   register: mysql_installation_result
 
 - name: Ensure MySQL service running

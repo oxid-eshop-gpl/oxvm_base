@@ -1,76 +1,76 @@
 ---
-  - name: Install firefox to get all dependencies
-    become: yes
-    apt:
-      name: "firefox"
-      state: present
+- name: Install firefox to get all dependencies
+  become: yes
+  apt:
+    name: "firefox"
+    state: present
 
-  - name: Download fixed firefox version
-    get_url:
-      dest: /tmp/firefox.tar.bz2
-      url: "{{ selenium.package.firefox.tar_url }}"
-      checksum: "{{ selenium.package.firefox.tar_checksum }}"
-      timeout: 60
-    register: result
-    until: result is success
-    retries: 5
-    delay: 1
+- name: Download fixed firefox version
+  get_url:
+    dest: /tmp/firefox.tar.bz2
+    url: "{{ selenium.package.firefox.tar_url }}"
+    checksum: "{{ selenium.package.firefox.tar_checksum }}"
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
-  - name: Install fixed firefox version
-    become: yes
-    shell: "cd /tmp && tar xvfj firefox.tar.bz2 && rm -rf /opt/firefox && mv firefox /opt/firefox && ln -sf /opt/firefox/firefox /usr/bin/firefox"
+- name: Install fixed firefox version
+  become: yes
+  shell: "cd /tmp && tar xvfj firefox.tar.bz2 && rm -rf /opt/firefox && mv firefox /opt/firefox && ln -sf /opt/firefox/firefox /usr/bin/firefox"
 
-  - name: Install dependencies needed for selenium
-    become: yes
-    apt:
-      name: "{{ packages }}"
-      state: present
-    vars:
-      packages:
+- name: Install dependencies needed for selenium
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
       - xfce4
       - xvfb
       - x11vnc
       - rng-tools
 
-  - name: Remove systemd-services
-    become: yes
-    apt:
-      name: "systemd-services"
-      state: absent
+- name: Remove systemd-services
+  become: yes
+  apt:
+    name: "systemd-services"
+    state: absent
 
-  - name: Disable screensaver
-    become: yes
-    apt:
-      name: "xscreensaver"
-      state: absent
+- name: Disable screensaver
+  become: yes
+  apt:
+    name: "xscreensaver"
+    state: absent
 
-  - name: Prepare placeholder for selenium
-    become: yes
-    file: path=/opt/selenium state=directory
+- name: Prepare placeholder for selenium
+  become: yes
+  file: path=/opt/selenium state=directory
 
-  - name: Download fixed selenium version
-    become: yes
-    get_url:
-      dest: /opt/selenium/selenium.jar
-      url: "{{ selenium.package.self.jar_url }}"
-      checksum: "{{ selenium.package.self.jar_checksum }}"
-      timeout: 60
-    register: result
-    until: result is success
-    retries: 5
-    delay: 1
+- name: Download fixed selenium version
+  become: yes
+  get_url:
+    dest: /opt/selenium/selenium.jar
+    url: "{{ selenium.package.self.jar_url }}"
+    checksum: "{{ selenium.package.self.jar_checksum }}"
+    timeout: 60
+  register: result
+  until: result is success
+  retries: 5
+  delay: 1
 
-  - name: Add selenium init script
-    become: yes
-    template: src=selenium_init_script dest=/etc/init.d/selenium mode=0755
+- name: Add selenium init script
+  become: yes
+  template: src=selenium_init_script dest=/etc/init.d/selenium mode=0755
 
-  - name: Add helper scripts
-    become: yes
-    template: "src={{ item }} dest=/opt/selenium/{{ item }} mode=0755"
-    with_items:
-      - 'start_selenium.sh'
-      - 'start_xvfb.sh'
+- name: Add helper scripts
+  become: yes
+  template: "src={{ item }} dest=/opt/selenium/{{ item }} mode=0755"
+  with_items:
+    - 'start_selenium.sh'
+    - 'start_xvfb.sh'
 
-  - name: Start selenium service
-    become: yes
-    service: name=selenium state=started enabled=yes
+- name: Start selenium service
+  become: yes
+  service: name=selenium state=started enabled=yes

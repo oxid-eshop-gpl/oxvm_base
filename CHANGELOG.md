@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.1.1] - Unreleased
+## [3.2.0] - Unreleased
 
 ### Changed
 - Use strict modes for MySQL 5.7
@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Clean up php versions on version changes
 - MySQL root password changing on provision
+- Improved coding style [PR-31](https://github.com/OXID-eSales/oxvm_base/pull/31)
 
 ## [3.1.0] - 1010-02-19
 
