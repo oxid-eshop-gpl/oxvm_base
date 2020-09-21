@@ -16,8 +16,7 @@ if [ ! -f /root/ansible_ready ]; then
   # USE_COMMON=0 when using a distribution at 12.04 or older
   USE_COMMON=$(echo "$DISTRIB_RELEASE > 12.04" | bc)
 
-  if [[ "$USE_COMMON" -eq "1" ]];
-  then
+  if [[ "$USE_COMMON" -eq "1" ]]; then
     sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends software-properties-common
   else
     sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends python-software-properties
@@ -29,16 +28,16 @@ if [ ! -f /root/ansible_ready ]; then
   sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ansible && sudo touch /root/ansible_ready
 
   # Copy vagrant's public key to allow ssh key authentication
-  cat /vagrant/ansible/files/authorized_keys >> /home/vagrant/.ssh/authorized_keys
+  cat /vagrant/ansible/files/authorized_keys >>/home/vagrant/.ssh/authorized_keys
 
   # Provide localhost for ansible
   sudo mkdir -p /etc/ansible
-  sudo echo 'localhost' > /etc/ansible/hosts
+  sudo echo 'localhost' >/etc/ansible/hosts
   sudo chmod 666 /etc/ansible/hosts
 fi
 
 if [ -z "$2" ]; then
-  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/$1.yml --connection=local
+  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/"$1".yml --connection=local
 else
-  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/$1.yml --tags "$2" --connection=local
+  cd /vagrant && sudo -u vagrant HOME=/home/vagrant /usr/bin/python2 -u /usr/bin/ansible-playbook /vagrant/ansible/"$1".yml --tags "$2" --connection=local
 fi

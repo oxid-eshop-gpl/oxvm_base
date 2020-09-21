@@ -3,7 +3,7 @@
   when: java.install
   tags:
     - java
-    
+
 - include: install.yml
   when: selenium.install
 
