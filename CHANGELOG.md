@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.2.0] - Unreleased
+## [3.2.0] - 2020-10-26
 
 ### Changed
 - Use strict modes for MySQL 5.7
@@ -15,8 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Clean up php versions on version changes
 - MySQL root password changing on provision
 - Improved coding style [PR-31](https://github.com/OXID-eSales/oxvm_base/pull/31)
+- Use Composer v1 release line
 
-## [3.1.0] - 1010-02-19
+## [3.1.0] - 2020-02-19
 
 ### Added
 - Support for MySQL 8.0
@@ -168,7 +169,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
-[Unreleased]: https://github.com/OXID-eSales/oxvm_base/compare/v3.1.0...master
+[3.2.0]: https://github.com/OXID-eSales/oxvm_base/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.1...v3.0.2
