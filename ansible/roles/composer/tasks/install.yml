@@ -14,7 +14,7 @@
 
 - name: Run composer installer
   become: yes
-  shell: php /tmp/composer_installer --version=1.10.16 --install-dir=/usr/local/bin --filename=composer creates=/usr/local/bin/composer && /usr/local/bin/composer selfupdate
+  shell: php /tmp/composer_installer --install-dir=/usr/local/bin --filename=composer creates=/usr/local/bin/composer && /usr/local/bin/composer selfupdate --{{ php.composer.major_version }}
 
 - name: Ensure composer configuration directory exists
   file: path=~/.composer/ state=directory mode=0755

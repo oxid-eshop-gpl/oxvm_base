@@ -88,6 +88,7 @@ php:
     timeout: 900
     installer_url: https://getcomposer.org/installer
     install: '1'
+    major_version: 2
     github_token: ~
     gitlab_token: ~
     gitlab_url: ~

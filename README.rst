@@ -260,6 +260,20 @@ Change the default application shared folder from ``www`` to local path
         source: /var/www
         target: /var/www
 
+Change major version of composer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To change which major release line of composer is being installed on vagrant up you can adapt this parameter.
+
+.. code:: yaml
+
+  ---
+  php:
+    composer:
+      major_version: 1
+
+If you need to change the composer version at a later point in time, simply use composer within the virtual machine a.e. `sudo composer selfupdate --1` for version 1 or `sudo composer selfupdate --2` for version 2.
+
 Define github token for composer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
