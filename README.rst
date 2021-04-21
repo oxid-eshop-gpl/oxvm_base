@@ -272,7 +272,7 @@ To change which major release line of composer is being installed on vagrant up 
     composer:
       major_version: 1
 
-If you need to change the composer version at a later point in time, simply use composer within the virtual machine a.e. `sudo composer selfupdate --1` for version 1 or `sudo composer selfupdate --2` for version 2.
+If you need to change the composer version at a later point in time, simply use composer within the virtual machine a.e. "sudo composer selfupdate --1" for version 1 or "sudo composer selfupdate --2" for version 2.
 
 Define github token for composer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
