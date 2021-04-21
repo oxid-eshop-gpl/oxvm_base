@@ -4,10 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [3.2.1] - Unreleased
+## [3.2.1] - 2021-04-21
+
+### Added
+- Setting php.composer.major_version plus readme section
+
+### Changed
+- Now use composer major_version 2 by default
 
 ### Fixed
-- Adapt xdebug.ini to be compatible with xdebug versions 2 and 3
+- Adapt xdebug.ini to be compatible with xdebug versions 2 and 3 [PR-32](https://github.com/OXID-eSales/oxvm_base/pull/32)
 
 ## [3.2.0] - 2020-10-26
 
@@ -174,6 +180,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README now contains configuration information
 - Varnish setup information
 
+[3.2.1]: https://github.com/OXID-eSales/oxvm_base/compare/v3.2.0...v3.2.1
 [3.2.0]: https://github.com/OXID-eSales/oxvm_base/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/OXID-eSales/oxvm_base/compare/v3.0.2...v3.0.3
