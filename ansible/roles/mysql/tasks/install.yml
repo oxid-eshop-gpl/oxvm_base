@@ -6,7 +6,7 @@
 - name: Add MySQL 8 ubuntu bionic repository key
   become: yes
   apt_key:
-    keyserver: keys.gnupg.net
+    keyserver: keyserver.ubuntu.com
     id: 5072E1F5
   when: mysql.version == "8.0"
 

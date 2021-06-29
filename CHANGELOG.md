@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Fixed
+- Replace deprecated keys.gnupg.net with keyserver.ubuntu.com for MySQL 8
+
 ## [3.2.1] - 2021-04-21
 
 ### Added
